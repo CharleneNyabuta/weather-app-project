@@ -46,6 +46,10 @@ li {
   margin-bottom: 20px;
 }
 
+#icon {
+  width: 200px;
+}
+
 .temperature {
   font-size: 75px;
   font-weight: 200;

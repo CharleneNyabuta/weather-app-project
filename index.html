@@ -17,7 +17,7 @@
     <div class="container">
       <div class="weather-app">
         <form>
-          <div class="form-group">
+          <div class="form-group" id="search-form">
             <input type="text" placeholder="Type a city..." />
           </div>
 
@@ -31,7 +31,12 @@
           </ul>
         </div>
         <div class="row">
-          <div class="col-4">IMAGE</div>
+          <div class="col-4" id="icon">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+              alt="weather-image"
+            />
+          </div>
 
           <div class="col-4">
             <span class="temperature" id="temperature">
