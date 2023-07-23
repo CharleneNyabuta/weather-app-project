@@ -10,17 +10,22 @@ body {
   border-radius: 5px;
 }
 
+.btn btn-primary {
+  display: inline;
+}
+
 h1 {
   color: #878787;
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
+  margin-top: 12px;
   margin-bottom: 0;
-  text-align: center;
+  text-align: left;
 }
 
 .time-and-desc {
-  text-align: center;
+  text-align: left;
 }
 
 ul {
@@ -33,6 +38,22 @@ li {
   margin: 0;
   padding: 0;
   color: #767576;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 100;
+}
+
+.overview {
+  margin-bottom: 20px;
+}
+
+.temperature {
+  font-size: 75px;
+  font-weight: 200;
+  line-height: 1;
+}
+
+.temp-units {
+  position: relative;
+  top: -44px;
+  left: -18px;
 }
