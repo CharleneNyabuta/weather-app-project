@@ -10,10 +10,6 @@ body {
   border-radius: 5px;
 }
 
-.btn btn-primary {
-  display: inline;
-}
-
 h1 {
   color: #878787;
   font-size: 24px;
@@ -42,6 +38,10 @@ li {
   font-weight: 100;
 }
 
+#description {
+  text-transform: capitalize;
+}
+
 .overview {
   margin-bottom: 20px;
 }
@@ -55,5 +55,5 @@ li {
 .temp-units {
   position: relative;
   top: -44px;
-  left: -18px;
+  left: -10px;
 }

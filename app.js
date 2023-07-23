@@ -1,5 +1,23 @@
 function showTemperature(response) {
   console.log(response.data);
+  let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
+  let precipitationElement = document.querySelector("#precipitation");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  console.log(temperatureElement);
+  cityElement.innerHTML = response.data.name;
+  console.log(cityElement);
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  console.log(descriptionElement);
+  precipitationElement.innerHTML = response.data.rain["1h"];
+  console.log(precipitationElement);
+  precipitationElement.innerHTML = response.data.rain["1h"] * 100;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  console.log(windElement);
 }
 let apiKey = "e7c95230e9f6b91dafc8b630c003d198";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=paris&appid=${apiKey}&units=metric`;
