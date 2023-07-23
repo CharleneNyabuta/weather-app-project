@@ -14,11 +14,37 @@ function showTemperature(response) {
   console.log(descriptionElement);
   precipitationElement.innerHTML = response.data.rain["1h"];
   console.log(precipitationElement);
+
   precipitationElement.innerHTML = response.data.rain["1h"] * 100;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   console.log(windElement);
 }
+
+function showDate(timestamp) {
+  let now = new Date();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let dateElement = document.querySelector("#date-and-time");
+  dateElement.innerHTML = `${day} ${hours}:${minutes}`;
+}
+showDate();
 let apiKey = "e7c95230e9f6b91dafc8b630c003d198";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=paris&appid=${apiKey}&units=metric`;
 
