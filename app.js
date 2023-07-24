@@ -1,5 +1,4 @@
 function showTemperature(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -7,14 +6,10 @@ function showTemperature(response) {
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  console.log(temperatureElement);
   cityElement.innerHTML = response.data.name;
-  console.log(cityElement);
   descriptionElement.innerHTML = response.data.weather[0].description;
-  console.log(descriptionElement);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  console.log(windElement);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -57,8 +52,8 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
-  console.log(cityInputElement.value);
 }
+
 search("Paris");
 
 let form = document.querySelector("#search-form");
