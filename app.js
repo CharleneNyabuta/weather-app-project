@@ -3,7 +3,6 @@ function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
-  let precipitationElement = document.querySelector("#precipitation");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
@@ -13,10 +12,6 @@ function showTemperature(response) {
   console.log(cityElement);
   descriptionElement.innerHTML = response.data.weather[0].description;
   console.log(descriptionElement);
-  precipitationElement.innerHTML = response.data.rain["1h"];
-  console.log(precipitationElement);
-
-  precipitationElement.innerHTML = response.data.rain["1h"] * 100;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   console.log(windElement);
@@ -50,7 +45,21 @@ function showDate(timestamp) {
   dateElement.innerHTML = `${day} ${hours}:${minutes}`;
 }
 showDate();
-let apiKey = "e7c95230e9f6b91dafc8b630c003d198";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=paris&appid=${apiKey}&units=metric`;
 
-axios.get(apiUrl).then(showTemperature);
+function search(city) {
+  let apiKey = "e7c95230e9f6b91dafc8b630c003d198";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+  console.log(cityInputElement.value);
+}
+search("Paris");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

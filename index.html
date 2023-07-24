@@ -16,12 +16,21 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <form>
-          <div class="form-group" id="search-form">
-            <input type="text" placeholder="Type a city..." />
+        <form id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="text"
+                placeholder="Type a city..."
+                class="form-control"
+                id="city-input"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-3">
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>
           </div>
-
-          <button type="submit" class="btn btn-primary">Search</button>
         </form>
         <div class="overview">
           <h1 id="city">Paris</h1>
@@ -51,7 +60,6 @@
           </div>
           <div class="col-4">
             <ul>
-              <li>Precipitation: <span id="precipitation">58</span>%</li>
               <li>Humidity: <span id="humidity">70</span>%</li>
               <li>Wind: <span id="wind">12</span>km/h</li>
             </ul>
