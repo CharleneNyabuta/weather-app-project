@@ -65,3 +65,21 @@ li {
 .author {
   text-align: center;
 }
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.forecast-day {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.forecast-temperatures {
+  font-size: 11px;
+}
+
+.forecast-minimum {
+  opacity: 0.6;
+}
